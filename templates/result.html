@@ -1,0 +1,24 @@
+<head>
+<title>{{title}}</title>
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='../static/styles/style.css') }}">
+<link href='https://fonts.googleapis.com/css2?family=Nunito' rel='stylesheet' type='text/css'>
+{% endblock %}
+<head>
+<body>
+{% block content %}
+<div class="container">
+<h1>Easy Message Create Result</h1>
+    Czesc chcielibysmy zamowic: <br />
+        {% for flavour in range(flavours| length)%}
+                {{flavours[flavour]}}: {{v[flavour]}}, <br />
+        {% endfor %}
+        Czapki: <br />
+        {% for cap in range(cap_colors| length)%}
+                {{cap_colors[cap]}}: {{c[cap]}}, <br />
+        {% endfor %}
+        Kubki: {{kubki}}<br />
+        Łyżki: {{spoons}}<br />
+     {% endblock %}
+</div>
+</body>
